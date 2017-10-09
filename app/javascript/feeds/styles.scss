@@ -1,0 +1,18 @@
+$navbar-nav-item-height: 60px !default;
+
+@import "~uikit/src/scss/variables-theme.scss";
+@import "~uikit/src/scss/mixins-theme.scss";
+@import "~uikit/src/scss/uikit-theme.scss";
+
+html, body {
+  height: 100%
+}
+
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.border-right {
+  border-right: 1px solid #f8f8f8;
+}

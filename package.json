@@ -4,9 +4,15 @@
   "dependencies": {
     "@rails/webpacker": "^3.0.2",
     "coffeescript": "1.12.7",
+    "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "uikit": "^3.0.0-beta.30",
     "vue": "^2.4.4",
     "vue-loader": "^13.0.5",
-    "vue-template-compiler": "^2.4.4"
+    "vue-router": "^2.7.0",
+    "vue-template-compiler": "^2.4.4",
+    "vuex": "^2.4.1"
   },
   "devDependencies": {
     "webpack-dev-server": "^2.9.1"
