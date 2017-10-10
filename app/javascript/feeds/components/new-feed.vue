@@ -4,6 +4,9 @@
       <label class="uk-form-label">Url</label>
       <div class="uk-form-controls">
         <input type="text" class="uk-input" :class="{'uk-form-danger': errors && errors.url}" autofocus placeholder="Feed url" v-model="feed.url" />
+        <div class="uk-text-small uk-text-danger" v-if="errors.url">
+          {{ errors.url }}
+        </div>
       </div>
       <div class="uk-margin-top">
         <button type="submit" class="uk-button uk-button-primary" :disabled="creating">
@@ -33,8 +36,11 @@ export default {
       this.creating = true
       this.$store.dispatch('addFeed', this.feed)
         .then(() => this.$router.push('/'))
-        .catch(errors => {
-          Vue.set(this, 'errors', errors)
+        .catch(err => {
+          const { errors } = err
+          if (errors) {
+            Vue.set(this, 'errors', errors)
+          }
           this.creating = false
         })
     }

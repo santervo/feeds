@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20171008121056) do
   end
 
   create_table "feeds", force: :cascade do |t|
+    t.string "url"
     t.string "title"
     t.string "link"
     t.text "summary"

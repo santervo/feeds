@@ -1,6 +1,9 @@
 class Feed < ApplicationRecord
   has_many :feed_entries, dependent: :destroy
 
+  validates :url, presence: true, uniqueness: true
+  validates :title, presence: true
+  
   def self.from_rss rss
     feed = self.new
     channel = rss.channel
