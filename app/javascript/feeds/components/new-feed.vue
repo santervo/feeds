@@ -35,7 +35,7 @@ export default {
     submit() {
       this.creating = true
       this.$store.dispatch('addFeed', this.feed)
-        .then(() => this.$router.push('/'))
+        .then(feed => this.$router.push({ name: 'feed', params: { feedId: feed.id }}))
         .catch(err => {
           const { errors } = err
           if (errors) {

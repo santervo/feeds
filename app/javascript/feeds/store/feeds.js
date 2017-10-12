@@ -47,4 +47,6 @@ const addFeed = ({ commit, dispatch }, feed) => {
         }
       }
     }))
+    // Return feed
+    .then(() => feed)
 }
