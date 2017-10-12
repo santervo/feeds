@@ -1,6 +1,8 @@
 import Vue from 'vue'
+import UIkit from 'uikit'
 
 import FeedService from '../services/feed.service'
+import FeedChannelService from '../services/feed-channel.service'
 
 export default {
   state: {
@@ -36,4 +38,13 @@ export default {
 const addFeed = ({ commit, dispatch }, feed) => {
   commit('ADD_FEED', feed)
   return dispatch('fetchFeedEntries', feed.id)
+    // Subscribe for new entries
+    .then(() => FeedChannelService.subscribe(feed.id, {
+      received({ message, payload }) {
+        if (message === 'feed_entry:created') {
+          commit('ADD_FEED_ENTRY', payload)
+          UIkit.notification(payload.title, { pos: 'top-right', status: 'primary' })
+        }
+      }
+    }))
 }
