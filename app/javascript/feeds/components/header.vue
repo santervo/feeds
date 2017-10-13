@@ -3,7 +3,7 @@
     <div class="uk-navbar-left">
       <a class="uk-navbar-item uk-logo" href="#">Feeds</a>
     </div>
-    <div class="uk-navbar-right">
+    <!--div class="uk-navbar-right">
       <ul class="uk-navbar-nav uk-margin-small-right">
         <li class="uk-active">
           <a href="">
@@ -11,6 +11,6 @@
           </a>
         </li>
       </ul>
-    </div>
+    </div-->
   </nav>
 </template>

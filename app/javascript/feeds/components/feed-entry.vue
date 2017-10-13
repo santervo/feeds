@@ -5,7 +5,7 @@
         {{ feedEntry.title }}
       </a>
     </h1>
-    <p class="uk-article-meta">{{ feedEntry.date | date }}</p>
+    <p class="uk-article-meta">{{ feedEntry.date | date('LLL') }}</p>
     <div class="summary" v-html="feedEntry.summary"></div>
   </article>
 </template>
