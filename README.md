@@ -1,24 +1,33 @@
-# README
+# feeds
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Realtime feed aggregator built with Vue, Vuex, UIkit and Ruby on Rails
 
-Things you may want to cover:
+## Features
 
-* Ruby version
+- UI built with Vue/Vuex/UIkit
+- Background syncing of feeds
+- Realtime updates via websockets to client
 
-* System dependencies
+## Requirements
 
-* Configuration
+- Ruby
+- Yarn
+- Foreman
+- Postgresql
+- Redis
 
-* Database creation
+## Setup
 
-* Database initialization
+```
+bundle install
+yarn
+rake db:setup
+```
 
-* How to run the test suite
+## Usage
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+foreman start
+```
 
-* Deployment instructions
-
-* ...
+It starts web server in port 5000 and background scheduler for syncing feeds.
